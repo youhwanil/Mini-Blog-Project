@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 <%
-    String id = request.getParameter("id");
+    String id = request.getParameter("userid");
     Class.forName("com.mysql.cj.jdbc.Driver");
     Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3309/blog", "root", "1234");
     PreparedStatement pstmt = conn.prepareStatement("SELECT * FROM posts WHERE id = ?");
@@ -13,7 +13,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" type="text/css" href="css/style.css">
+<link rel="stylesheet" type="text/css" href="../css/style.css">
     <title><%= rs.getString("title") %></title>
 </head>
 <body>

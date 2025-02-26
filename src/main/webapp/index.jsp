@@ -21,14 +21,16 @@
     <nav>
         <a href="index.jsp">홈</a>
         <% if(session.getAttribute("userId") == null) { %>
-            <a href="login.jsp">로그인</a>
-            <a href="register.jsp">회원가입</a>
+            <a href="login/login.jsp">로그인</a>
+            <a href="login/register.jsp">회원가입</a>
         <% } else { %>
-            <a href="write.jsp">글쓰기</a>
-            <a href="mypage.jsp">마이페이지</a>
-            <a href="logout.jsp">로그아웃</a>
+            <a href="post/write.jsp">글쓰기</a>
+            <a href="user/mypage.jsp">마이페이지</a>
+            <a href="login/logout.jsp">로그아웃</a>
         <% } %>
     </nav>
+    
+    
     <h2>최신 글</h2>
     <ul>
         <% while(rs.next()) { %>
